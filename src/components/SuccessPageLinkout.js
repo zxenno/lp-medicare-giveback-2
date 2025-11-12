@@ -45,7 +45,7 @@ function SuccessPageLinkout({ onBack }) {
         {/* Phone Button with Clicking Hand */}
         <div className="flex justify-center mb-4 relative overflow-visible">
           <a
-            href="tel:8772690636"
+            href="https://blrwv.ttrk.io/click"
             className="claim-button-animated bg-[#00A896] hover:bg-[#008c7a] text-white font-semibold py-4 px-8 rounded-lg flex items-center gap-3 text-lg transition-colors relative overflow-visible"
           >
             {/* Clicking Hand GIF coming up from lower right edge */}
