@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Step transition animations */
+.step-transition {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.step-transition.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideIn 0.3s ease-out;
+}
+
+.step-transition.fade-out {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Confetti Animation */
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-20px) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(500px) translateX(calc(var(--drift) * 100px)) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti-particle {
+  animation: confettiFall linear forwards;
+  --drift: 0;
+}
+
+.confetti-particle:nth-child(odd) {
+  --drift: 0.5;
+}
+
+.confetti-particle:nth-child(even) {
+  --drift: -0.5;
+}
+
+.confetti-particle:nth-child(3n) {
+  --drift: 0.3;
+}
+
+.confetti-particle:nth-child(4n) {
+  --drift: -0.3;
+}
+
+.confetti-particle:nth-child(5n) {
+  --drift: 0.7;
+}
